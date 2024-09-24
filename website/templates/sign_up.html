@@ -1,0 +1,31 @@
+{% extends "base.html"%}<title>{% block title %}Sign Up{% endblock %}</title>   <!--same as base.html but can override any blocks that were defined inside of base.htmnl-->
+{% block content %} 
+<!-- <h1> This is the sign up page</h1>will only show up on the homepage -->
+<form method = "POST" >
+    <h3 align ="center">Sign Up</h3>
+    <div class="form-group">
+        <label for="email">Email Address</label> <!-- for = class here-->
+        <input type="email", class="form-control" id="email" name="email" placeholder="Enter email"> <!--name = attribute called when we pass info to our backend - bascially when u submit the form itll bundle up info and store it in the name=var -> so in this case in email-->
+    </div>
+
+    <div class="form-group">
+        <label for="firstName">First Name</label> <!-- for = class here-->
+        <input type="text", class="form-control" id="firstName" name="firstName" placeholder="Enter first name"> <!--keep name = id-->
+    </div>
+
+    <div class="form-group">
+    <label for="password1">Passowrd</label> <!-- for = class here-->
+    <input type="password", class="form-control" id="password1" name="password1" placeholder="Enter password"> <!--keep name = id-->
+    </div>
+
+    <div class="form-group">
+    <label for="password2">Passowrd Confirm</label> <!-- for = class here-->
+    <input type="password", class="form-control" id="password2" name="password2" placeholder="Confirm password"> <!--keep name = id-->
+    </div>
+
+    <br> <!-- break line-->
+
+    <button type="submit" class="btn btn-primary"> Submit</button>
+
+</form>
+{% endblock %}

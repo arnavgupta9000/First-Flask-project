@@ -1,0 +1,24 @@
+{% extends "base.html"%}<title>{% block title %}Login{% endblock %}</title>   <!--same as base.html but can override any blocks that were defined inside of base.htmnl-->
+{% block content %} 
+<!-- <h1> This is the login page</h1>will only show up on the homepage -->
+{#{ text  it will show up "testing" because we passed in a variable }#} {#{user + "s"}#}
+{# {% if boolean == True %} yes it is true!{%elif boolean == False%} hi there {%else%} No it is not true{% endif %}  just get rid of the extra {} on the outside of the "#" #}
+<form method = "POST" >
+    <h3 align ="center">Log in</h3>
+    <div class="form-group">
+        <label for="email">Email Address</label> <!-- for = class here-->
+        <input type="email", class="form-control" id="email" name="email" placeholder="Enter email"> <!--name = attribute called when we pass info to our backend - bascially when u submit the form itll bundle up info and store it in the name=var -> so in this case in email-->
+    </div>
+
+
+    <div class="form-group">
+    <label for="password">Passowrd</label> <!-- for = class here-->
+    <input type="password", class="form-control" id="password" name="password" placeholder="Enter password"> <!--keep name = id-->
+    </div>
+
+
+
+    <br> <!-- break line-->
+
+    <button type="submit" class="btn btn-primary"> Login</button>
+{% endblock %}

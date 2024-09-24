@@ -1,0 +1,5 @@
+<!-- how to extend base template -->
+{% extends "base.html"%}<title>{% block title %}Home{% endblock %}</title>   <!--same as base.html but can override any blocks that were defined inside of base.htmnl-->
+{% block content %} 
+<h1> This is the home page</h1><!--will only show up on the homepage -->
+{% endblock %}

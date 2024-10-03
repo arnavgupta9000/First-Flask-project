@@ -1,5 +1,30 @@
 <!-- how to extend base template -->
 {% extends "base.html"%}<title>{% block title %}Home{% endblock %}</title>   <!--same as base.html but can override any blocks that were defined inside of base.htmnl-->
 {% block content %} 
-<h1> This is the home page</h1><!--will only show up on the homepage -->
+<!-- <h1> This is the home page</h1>will only show up on the homepage -->
+
+<h1 align="center">Notes</h1>
+<ul class="list-group list-group-flush" id="notes">
+    {%for note in user.notes %}
+    <li class="list-group-item">{{note.data}}
+        <!-- eslint-disable-next-line -->
+        <button type="button" class="close" data-note-id="{{ note.id }}" onClick="deleteNote(this.getAttribute('data-note-id'))"> <!-- note.id needed to access that specific note id to delete it later-- also idk why this line has an error it works...> fixed using this new way instad  --> 
+            <span aria-hidden ='true'>&times;</span>
+        </button>
+
+    </li>
+    {%endfor%}
+
+</ul>
+
+<form action="" method="post">
+
+    <textarea name="note" id="mpte" class="form-control"></textarea>
+    <br>
+    <div align="center">
+        <button type="submit" class="btn btn-primary">Add note</button>
+    </div>
+
+
+</form>
 {% endblock %}
